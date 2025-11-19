@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion'
-import { ArrowUpRight, Code2, Globe, Users, Zap } from 'lucide-react'
-import React, { useRef } from 'react'
+import { ArrowUpRight, Code2, Globe, Users, Zap, Smartphone, Monitor, Layers } from 'lucide-react'
+import React, { useRef, useState } from 'react'
 import { useTheme } from '../../context/ThemeContext'
 import { PROJECTS } from '../../utils/data';
 import { containerVariants, itemVariants } from '../../utils/helper';
@@ -10,6 +10,7 @@ const ProjectSection = () => {
     const { isDarkMode } = useTheme();
     const sectionRef = useRef(null);
     const isInView = useInView(sectionRef, { once: false, margin: "-100px" });
+    const [activeTab, setActiveTab] = useState('all');
 
     // Create refs for different sections to track their visibility
     const headerRef = useRef(null);
@@ -18,6 +19,19 @@ const ProjectSection = () => {
     const isHeaderInView = useInView(headerRef, { once: false, margin: "-50px" });
     const isProjectsInView = useInView(projectsRef, { once: false, margin: "-50px" });
     const isButtonInView = useInView(buttonRef, { once: false, margin: "-50px" });
+
+    // Define tabs with icons
+    const tabs = [
+        { id: 'all', label: 'All Projects', icon: Layers, count: PROJECTS.length },
+        { id: 'Full Stack', label: 'Full Stack', icon: Code2, count: PROJECTS.filter(p => p.category === 'Full Stack').length },
+        { id: 'Frontend', label: 'Frontend', icon: Monitor, count: PROJECTS.filter(p => p.category === 'Frontend').length },
+        { id: 'Mobile', label: 'Mobile', icon: Smartphone, count: PROJECTS.filter(p => p.category === 'Mobile').length },
+    ];
+
+    // Filter projects based on active tab
+    const filteredProjects = activeTab === 'all' 
+        ? PROJECTS 
+        : PROJECTS.filter(project => project.category === activeTab);
 
     // Text variants for animations
     const titleVariants = {
@@ -48,6 +62,19 @@ const ProjectSection = () => {
                 ease: "easeOut"
             }
         }
+    };
+
+    const tabVariants = {
+        hidden: { opacity: 0, scale: 0.8 },
+        visible: (index) => ({
+            opacity: 1,
+            scale: 1,
+            transition: {
+                duration: 0.5,
+                delay: index * 0.1,
+                ease: "easeOut"
+            }
+        })
     };
 
     return (
@@ -111,19 +138,78 @@ const ProjectSection = () => {
                             isDarkMode ? 'text-gray-300' : 'text-gray-600'
                         }`}
                     >
-                        Explore my latest work showcasing innovative solutions and cutting-edge technologies
+                        Explore my latest work across different technologies and platforms
                     </motion.p>
+                </motion.div>
+
+                {/* Category Tabs */}
+                <motion.div
+                    initial="hidden"
+                    animate={isHeaderInView ? "visible" : "hidden"}
+                    className="flex flex-wrap justify-center gap-4 mb-12"
+                >
+                    {tabs.map((tab, index) => {
+                        const IconComponent = tab.icon;
+                        const isActive = activeTab === tab.id;
+                        
+                        return (
+                            <motion.button
+                                key={tab.id}
+                                custom={index}
+                                variants={tabVariants}
+                                onClick={() => setActiveTab(tab.id)}
+                                className={`group relative flex items-center gap-3 px-6 py-4 rounded-2xl font-medium transition-all duration-300 ${
+                                    isActive
+                                        ? isDarkMode
+                                            ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/25'
+                                            : 'bg-blue-600 text-white shadow-lg shadow-blue-500/25'
+                                        : isDarkMode
+                                            ? 'bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white'
+                                            : 'bg-white text-gray-600 hover:bg-gray-100 hover:text-gray-900 shadow-md'
+                                }`}
+                                whileHover={{ 
+                                    scale: 1.05,
+                                    y: -2
+                                }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                <IconComponent size={20} className="flex-shrink-0" />
+                                <span className="whitespace-nowrap">{tab.label}</span>
+                                <span className={`px-2 py-1 text-xs rounded-full ${
+                                    isActive
+                                        ? 'bg-white/20 text-white'
+                                        : isDarkMode
+                                            ? 'bg-gray-700 text-gray-300'
+                                            : 'bg-gray-200 text-gray-600'
+                                }`}>
+                                    {tab.count}
+                                </span>
+                                
+                                {/* Active indicator */}
+                                {isActive && (
+                                    <motion.div
+                                        layoutId="activeTab"
+                                        className={`absolute inset-0 rounded-2xl border-2 ${
+                                            isDarkMode ? 'border-blue-400' : 'border-blue-500'
+                                        }`}
+                                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                                    />
+                                )}
+                            </motion.button>
+                        );
+                    })}
                 </motion.div>
 
                 {/* Projects Grid */}
                 <motion.div
                     ref={projectsRef}
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate={isProjectsInView ? "visible" : "hidden"}
+                    key={activeTab} // Re-trigger animation when tab changes
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
                 >
-                    {PROJECTS.map((project, index) => (
+                    {filteredProjects.map((project, index) => (
                         <ProjectCard 
                             key={project.id} 
                             project={project} 
@@ -133,6 +219,29 @@ const ProjectSection = () => {
                         />
                     ))}
                 </motion.div>
+
+                {/* Empty State */}
+                {filteredProjects.length === 0 && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className="text-center py-16"
+                    >
+                        <div className={`w-24 h-24 mx-auto mb-6 rounded-full flex items-center justify-center ${
+                            isDarkMode ? 'bg-gray-800' : 'bg-gray-200'
+                        }`}>
+                            <Code2 size={40} className={isDarkMode ? 'text-gray-400' : 'text-gray-500'} />
+                        </div>
+                        <h3 className={`text-xl font-semibold mb-2 ${
+                            isDarkMode ? 'text-gray-300' : 'text-gray-700'
+                        }`}>
+                            No projects found
+                        </h3>
+                        <p className={isDarkMode ? 'text-gray-400' : 'text-gray-500'}>
+                            There are no projects in this category yet.
+                        </p>
+                    </motion.div>
+                )}
 
                 {/* View All Projects Button */}
                 <motion.div

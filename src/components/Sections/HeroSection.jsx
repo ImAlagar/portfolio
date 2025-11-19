@@ -259,13 +259,13 @@ const HeroSection = () => {
                     .
                   </span>
                   <span className={`${isDarkMode ? "text-gray-600" : "text-gray-500"}`}>
-                    Typescript
+                    Flutter
                   </span>
                   <span className={`${isDarkMode ? "text-gray-700" : "text-gray-400"}`}>
                     .
                   </span>
                   <span className={`${isDarkMode ? "text-gray-600" : "text-gray-500"}`}>
-                    MongoDB
+                    PostGreSQL
                   </span>
                 </motion.div>
               </motion.div>
@@ -401,13 +401,13 @@ const HeroSection = () => {
                     •
                   </span>
                   <span className={`${isDarkMode ? "text-gray-400" : "text-gray-600"}`}>
-                    Typescript
+                    Flutter
                   </span>
                   <span className={`${isDarkMode ? "text-gray-600" : "text-gray-400"}`}>
                     •
                   </span>
                   <span className={`${isDarkMode ? "text-gray-400" : "text-gray-600"}`}>
-                    MongoDB
+                    PostgreSQL
                   </span>
                 </motion.div>
 

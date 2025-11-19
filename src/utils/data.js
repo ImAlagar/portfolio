@@ -10,6 +10,11 @@ import {
   FiGithub, FiLinkedin, FiTwitter, FiInstagram, FiMail 
 } from "react-icons/fi";
 
+import agumiya from "../assets/images/agumiya.png"
+import velan from "../assets/images/velan.png"
+import rksofttech from "../assets/images/rksofttech.png"
+import telzup from "../assets/images/telzup.png"
+import garments from "../assets/images/garments.png"
 
 // ---------------- SKILLS ----------------
 export const SKILLS_CATEGORY = [
@@ -106,98 +111,88 @@ export const PROJECTS = [
     id: 1,
     title: "E-Commerce Platform",
     description: "A modern e-commerce solution with product catalog, cart, payments, and admin dashboard.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    tags: ["React", "Tailwind", "Node.js", "MongoDB"],
-    liveUrl: "https://myecommerce.com",
-    githubUrl: "https://github.com/yourname/ecommerce",
+    image: agumiya,
+    tags: ["React", "Tailwind", "Node.js", "Postgresql"],
+    liveUrl: "https://agumiyacollections.com",
+    githubUrl: "https://github.com/ImAlagar/agumiya-collections-frontend.git",
     featured: true,
     category: "Full Stack",
-    clientName: "RetailX",
+    clientName: "Agumiya Collections",
   },
   {
     id: 2,
     title: "Portfolio Website",
     description: "Personal portfolio showcasing skills, projects, and blogs with smooth animations.",
     image: "https://images.unsplash.com/photo-1508780709619-79562169bc64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    tags: ["Next.js", "Framer Motion", "Tailwind"],
-    liveUrl: "https://myportfolio.com",
-    githubUrl: "https://github.com/yourname/portfolio",
+    tags: ["React", "Framer Motion", "Tailwind"],
+    liveUrl: "https://alagarportfolio.netlify.app/",
+    githubUrl: "https://github.com/ImAlagar/portfolio.git",
     featured: false,
     category: "Frontend",
     clientName: "Personal",
   },
   {
     id: 3,
-    title: "Task Management App",
-    description: "A Trello-like app for task organization with drag & drop and real-time sync.",
-    image: "https://images.unsplash.com/photo-1584697964199-9b45a6e6e087?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    tags: ["React", "Redux", "Firebase"],
-    liveUrl: "https://mytasks.com",
-    githubUrl: "https://github.com/yourname/tasks",
+    title: "E-Commerce Platform",
+    description: "A modern e-commerce solution with product catalog, cart, payments, and admin dashboard.",
+    image: velan,
+    tags: ["React", "Redux", "Tailwind", "Node.js", "Postgresql"],
+    liveUrl: "https://shrivelanorganicfoods.com/",
+    githubUrl: "https://github.com/ImAlagar/shri-velan-frontend.git",
     featured: true,
     category: "Full Stack",
-    clientName: "TeamFlow",
+    clientName: "Shri Velan Organic Food",
   },
   {
     id: 4,
-    title: "Chat Application",
-    description: "Real-time chat app with groups, emojis, and file sharing.",
-    image: "https://images.unsplash.com/photo-1611175694980-047f7f3a3ef3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    tags: ["React Native", "Socket.io", "Node.js"],
-    liveUrl: "https://mychatapp.com",
-    githubUrl: "https://github.com/yourname/chatapp",
+    title: "Kaveri Matrimony Application",
+    description: "Real-time matrimonial mobile app built with Flutter. Features: live chat (Socket.io), real-time updates, push notifications, user profiles, and Node.js backend.",
+    image: rksofttech,
+    tags: ["Flutter", "Socket.io", "Node.js"],
+    liveUrl: "https://www.kaverykannadadevangakulamatrimony.com/",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.kavery.matrimony.app",
+    githubUrl: null,        // set to repo URL if you want to share source
     featured: false,
     category: "Mobile",
-    clientName: "ChatX",
+    clientName: "RK Soft Tech",
   },
   {
     id: 5,
-    title: "Blog Platform",
-    description: "A multi-user blogging platform with markdown support, comments, and likes.",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    tags: ["Next.js", "Prisma", "PostgreSQL"],
-    liveUrl: "https://myblog.com",
-    githubUrl: "https://github.com/yourname/blog",
+    title: "E Commerce Platform",
+    description: "A full-stack e-commerce platform for a T-shirts business with product listings, size & color variants, shopping cart, secure checkout, and admin product management.",
+    image: garments,
+    tags: ["Node.js", "Prisma", "PostgreSQL", "React", "Tailwind", "Framer motion"],
+    liveUrl: "https://hangergarment.netlify.app/",
+    githubUrl: "https://github.com/ImAlagar/hanger-garments.git",
     featured: false,
     category: "Full Stack",
-    clientName: "WriterHub",
+    clientName: "Hanger Garments",
   },
   {
     id: 6,
-    title: "Fitness Tracker",
-    description: "Mobile app to track workouts, steps, calories, and progress over time.",
-    image: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    tags: ["React Native", "Expo", "Firebase"],
-    liveUrl: "https://fitapp.com",
-    githubUrl: "https://github.com/yourname/fitapp",
+    title: "Telzup Mobile Application",
+    description: "CRM-focused telecalling app to track call recordings, call logs, leads, and real-time agent activities.",
+    image: telzup,
+    tags: ["Kotlin", "Django", "postgresql", "React", "Tailwind Css"],
+    liveUrl: "https://tzfe.etplhub.com/",
+    githubUrl: null,
     featured: true,
     category: "Mobile",
-    clientName: "FitLife",
+    clientName: "Emayam Technology",
   },
   {
     id: 7,
     title: "Analytics Dashboard",
     description: "Interactive dashboard for monitoring KPIs, charts, and reports.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    tags: ["React", "D3.js", "Tailwind"],
-    liveUrl: "https://analyticspro.com",
-    githubUrl: "https://github.com/yourname/analytics",
+    tags: ["python", "Django", "Web Socket","React", "D3.js", "Tailwind"],
+    liveUrl: "https://focult16.etplhub.com",
+    githubUrl: false,
     featured: false,
-    category: "Frontend",
-    clientName: "DataX",
-  },
-  {
-    id: 8,
-    title: "Travel Booking System",
-    description: "A booking platform for flights and hotels with payment gateway integration.",
-    image: "https://images.unsplash.com/photo-1518684079-3c830dcef090?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    tags: ["Vue.js", "Express.js", "MySQL"],
-    liveUrl: "https://travelhub.com",
-    githubUrl: "https://github.com/yourname/travelhub",
-    featured: true,
     category: "Full Stack",
-    clientName: "TravelHub",
+    clientName: "Emayam Technology",
   },
+
 ];
 
 
@@ -298,35 +293,29 @@ export const SOCIAL_LINKS = [
   {
     name: "Github",
     icon: FiGithub,
-    url: "https://github.com/yourusername",
+    url: "https://github.com/ImAlagar",
     color: "hover:text-gray-400",
     bgcolor: "hover:bg-gray-800",
   },
   {
     name: "LinkedIn",
     icon: FiLinkedin,
-    url: "https://linkedin.com/in/yourusername",
+    url: "https://www.linkedin.com/in/alagar-ramar/",
     color: "hover:text-blue-400",
     bgcolor: "hover:bg-blue-800",
   },
-  {
-    name: "Twitter",
-    icon: FiTwitter,
-    url: "https://twitter.com/yourusername",
-    color: "hover:text-sky-400",
-    bgcolor: "hover:bg-sky-800",
-  },
+
   {
     name: "Instagram",
     icon: FiInstagram,
-    url: "https://instagram.com/yourusername",
+    url: "https://www.instagram.com/im_alagar4563/",
     color: "hover:text-pink-400",
     bgcolor: "hover:bg-pink-800",
   },
   {
     name: "Email",
     icon: FiMail,
-    url: "mailto:yourmail@example.com",
+    url: "mailto:alagar17302@gmail.com",
     color: "hover:text-red-400",
     bgcolor: "hover:bg-red-800",
   },
@@ -343,7 +332,7 @@ export const CONTACT_INFO = [
   {
     icon: Phone,
     label: "Phone",
-    value: "+91 98765 43210", // replace with your real number
+    value: "+91 9150118554", // replace with your real number
   },
   {
     icon: MapPin,
@@ -366,6 +355,7 @@ export const CONTACT_INFO = [
 // src/constants/data.js
 
 import heroImg from "../assets/images/alagar.png";
+import { ImOpt } from "react-icons/im";
 
 
 export const IMAGES = {

@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useMotionTemplate, useMotionValue, useSpring } from 'framer-motion';
-import { ExternalLink, Github, ArrowUpRight } from 'lucide-react';
+import { ExternalLink, Github, ArrowUpRight, Play } from 'lucide-react';
+import { BiLogoPlayStore } from 'react-icons/bi';
 
 const ProjectCard = ({ project, index, isDarkMode }) => {
     const cardRef = useRef(null);
@@ -158,6 +159,20 @@ const ProjectCard = ({ project, index, isDarkMode }) => {
                                 } transition-colors duration-300 shadow-lg`}
                             >
                                 <ExternalLink className="w-5 h-5" />
+                            </motion.a>
+                        )}
+                         {project.playStoreUrl && (
+                            <motion.a
+                                href={project.playStoreUrl}
+                                whileHover={{ scale: 1.1, y: -5 }}
+                                whileTap={{ scale: 0.9 }}
+                                className={`p-3 rounded-full backdrop-blur-sm ${
+                                    isDarkMode 
+                                    ? 'bg-blue-600/90 text-white hover:bg-blue-500' 
+                                    : 'bg-white/90 text-blue-600 hover:bg-white'
+                                } transition-colors duration-300 shadow-lg`}
+                            >
+                                <BiLogoPlayStore className="w-5 h-5" />
                             </motion.a>
                         )}
                         {project.githubUrl && (
