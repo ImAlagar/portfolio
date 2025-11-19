@@ -20,7 +20,6 @@ export const SKILLS_CATEGORY = [
     skills: [
       { name: "React", level: 95, color: "bg-blue-500" },
       { name: "TypeScript", level: 90, color: "bg-blue-400" },
-      { name: "Next.js", level: 85, color: "bg-gray-800" },
       { name: "Tailwind CSS", level: 95, color: "bg-cyan-500" },
       { name: "Framer Motion", level: 80, color: "bg-pink-500" },
     ],
@@ -32,8 +31,6 @@ export const SKILLS_CATEGORY = [
     skills: [
       { name: "Node.js", level: 90, color: "bg-green-600" },
       { name: "Express.js", level: 85, color: "bg-gray-700" },
-      { name: "NestJS", level: 75, color: "bg-red-500" },
-      { name: "GraphQL", level: 70, color: "bg-pink-600" },
       { name: "REST APIs", level: 95, color: "bg-blue-600" },
     ],
   },
@@ -45,7 +42,6 @@ export const SKILLS_CATEGORY = [
       { name: "MySQL", level: 85, color: "bg-orange-500" },
       { name: "PostgreSQL", level: 80, color: "bg-indigo-500" },
       { name: "MongoDB", level: 75, color: "bg-green-500" },
-      { name: "Redis", level: 70, color: "bg-red-600" },
       { name: "Prisma ORM", level: 80, color: "bg-purple-500" },
     ],
   },
@@ -58,7 +54,6 @@ export const SKILLS_CATEGORY = [
       { name: "Expo", level: 80, color: "bg-indigo-400" },
       { name: "Flutter", level: 70, color: "bg-cyan-500" },
       { name: "Android Studio", level: 65, color: "bg-green-600" },
-      { name: "iOS Basics", level: 60, color: "bg-gray-500" },
     ],
   },
   {
@@ -67,7 +62,6 @@ export const SKILLS_CATEGORY = [
     description: "Automating deployments, monitoring & scaling systems",
     skills: [
       { name: "Docker", level: 80, color: "bg-blue-400" },
-      { name: "Kubernetes", level: 65, color: "bg-indigo-600" },
       { name: "Git & GitHub", level: 95, color: "bg-gray-800" },
       { name: "CI/CD (GitHub Actions)", level: 85, color: "bg-green-500" },
       { name: "NGINX", level: 70, color: "bg-teal-500" },
@@ -92,21 +86,17 @@ export const SKILLS_CATEGORY = [
 export const TECH_STACK = [
   "Webpack",
   "Vite",
-  "Jest",
-  "Cypress",
   "ESLint",
   "Prettier",
-  "Babel",
-  "Storybook"
 ];
 
 
 // ---------------- STATS ----------------
 export const STATS = [
-  { number: "50+", label: "Projects Completed" },
-  { number: "20+", label: "Happy Clients" },
-  { number: "5+", label: "Years Experience" },
-  { number: "10+", label: "Tech Stacks Mastered" },
+  { number: "5+", label: "Projects Completed" },
+  { number: "2+", label: "Happy Clients" },
+  { number: "1+", label: "Years Experience" },
+  { number: "5+", label: "Tech Stacks Mastered" },
 ];
 
 
